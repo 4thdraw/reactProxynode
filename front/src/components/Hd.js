@@ -7,23 +7,33 @@ class Hd extends Component {
     constructor(props) {
         super(props);
         this.state={
-            body : ''
+            body : '',
+            method : ''
         }
     }
 
 
    
-    componentDidMount (){
-        axios.post('/reactProxy', {})
-        .then( response =>{
+    componentDidMount = async() =>{
+      await  axios.post('/reactProxy',{})
+      .then(res =>{
+        this.setState({ body : res.data.title})
 
-            this.setState({ body : response.data.Method})
+      })
 
-        }
+     const getdata = await axios.get('/reactProxy/get')
+     this.setState({method : getdata.data})
 
-        )
+
+
         
-        //console.log(body)
+
+            
+
+
+       
+        
+        console.log(this.state.method)
         
     }
     render() {

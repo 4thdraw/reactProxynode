@@ -3,16 +3,17 @@ import React, {useEffect, useState}  from 'react';
 const axios = require('axios');
 
 
-function Hdpost(props) {
+function Hdpost() {
     const [poststate, postUpdate] = useState('아직안옴 post로 전송된 디비');
 
-    // useEffect(()=>{
+    useEffect( async ()=>{
+       await axios.post('/post',{})
+       .then( res =>{
+        postUpdate(res.data.title)
+       } )
 
-    // })
-    // const dbPress = async (t) => {
-    //   postUpdate(t)
-    //   //snsstate값을 t로 수정해라
-    // }
+    })
+    
 
 
     return (

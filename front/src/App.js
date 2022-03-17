@@ -1,16 +1,18 @@
-import { BrowserRouter } from 'react-router-dom'
+
 import Hd from './components/Hd'
-//import Hdpost from './components/Hdpost'
+import Postsend from './components/Hdpost'
+
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+   
 
       <Hd></Hd>
+      <Postsend></Postsend>
      
-      
-    </BrowserRouter>
+     
+    
 
     </>
   );
